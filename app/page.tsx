@@ -1,6 +1,7 @@
 import CompanionCard from "@/components/companioncard";
 import CompanionList from "@/components/companionlist";
 import CTA from "@/components/cta";
+import { recentSessions } from "@/constants";
 
 export default function Home() {
   return (
@@ -34,7 +35,11 @@ export default function Home() {
         />
       </section>
       <section className="home-section">
-        <CompanionList />
+        <CompanionList
+        title="Recent Sessions"
+          companions={recentSessions}
+          className="w-2/3 max-lg:w-full"
+        />
         <CTA />
       </section>
     </main>
