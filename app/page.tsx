@@ -1,10 +1,42 @@
-import { Button } from "@/components/ui/button";
+import CompanionCard from "@/components/companioncard";
+import CompanionList from "@/components/companionlist";
+import CTA from "@/components/cta";
 
 export default function Home() {
   return (
-    <div>
-      <h1 className="text-2xl underline">Welcome to my Saas</h1>
-      <Button>Lets get Started</Button>
-    </div>
+    <main>
+      <h1>Popular Companions</h1>
+
+      <section className="home-section">
+        <CompanionCard
+          id="1"
+          name="Neura the Brainy Explorer"
+          title="Neural Network of the Brain"
+          subject="Science"
+          duration={45}
+          color="#f22"
+        />
+        <CompanionCard
+          id="2"
+          name="Countsy the Number Wizard"
+          title="Derivatives & Integrals"
+          subject="Maths"
+          duration={30}
+          color="#f09"
+        />
+        <CompanionCard
+          id="3"
+          name="Verba the Vocabulary Builder"
+          title=" English Literature"
+          subject="Language"
+          duration={30}
+          color="#f99"
+        />
+      </section>
+      <section className="home-section">
+        <CompanionList />
+        <CTA />
+      </section>
+    </main>
   );
 }
