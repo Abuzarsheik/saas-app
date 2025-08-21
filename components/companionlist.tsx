@@ -33,7 +33,7 @@ export default function CompanionList({
           </TableRow>
         </TableHeader>
         <TableBody>
-          {companions?.map(({ id, subject, name, topic, duration, color }) => (
+          {companions?.map(({ id, subject, name, topic, duration }) => (
             <TableRow key={id}>
               <TableCell>
                 <Link href={`/companion/${id}`}>
