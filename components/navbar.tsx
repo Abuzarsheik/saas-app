@@ -1,6 +1,14 @@
+"use client"
 import Image from "next/image";
 import Link from "next/link";
 import NavItems from "./navitems";
+import {
+  SignIn,
+  SignInButton,
+  SignedIn,
+  SignedOut,
+  UserButton,
+} from "@clerk/nextjs";
 
 export default function Navbar() {
   return (
@@ -12,7 +20,14 @@ export default function Navbar() {
       </Link>
       <div className="flex items-center gap-8">
         <NavItems />
-        <p>Sign in</p>
+        <SignedOut>
+          <SignInButton>
+            <button className="btn-signin"> Sign in</button>
+          </SignInButton>
+        </SignedOut>
+        <SignedIn>
+          <UserButton afterSignOutUrl="/" />
+        </SignedIn>
       </div>
     </nav>
   );
