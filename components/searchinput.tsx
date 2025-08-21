@@ -10,7 +10,7 @@ export default function SearchInput() {
   const searchParams = useSearchParams();
   const query = searchParams.get("topic") || "";
 
-  const [searchQuery, setsearchQuery] = useState("");
+  const [searchQuery, setSearchQuery] = useState(query);
 
   useEffect(() => {
     const delayDebounceFn = setTimeout(() => {
@@ -33,6 +33,7 @@ export default function SearchInput() {
         }
       }
     }, 500);
+    return () => clearTimeout(delayDebounceFn);
   }, [searchParams, searchQuery, router, pathname]);
   return (
     <div className="relative border border-black rounded-lg items-center flex gap-2 px-2 py-1 h-fit">
@@ -41,7 +42,7 @@ export default function SearchInput() {
         placeholder="Search Companions..."
         className="outline-none"
         value={searchQuery}
-        onChange={(e) => setsearchQuery(e.target.value)}
+        onChange={(e) => setSearchQuery(e.target.value)}
       />
     </div>
   );
