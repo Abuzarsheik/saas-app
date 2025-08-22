@@ -7,7 +7,6 @@ import { useEffect, useRef, useState } from "react";
 import soundwaves from "@/constants/soundwaves.json";
 
 type CompanionComponentProps = {
-  companionid: string;
   name: string;
   topic: string;
   subject: string;
@@ -24,7 +23,6 @@ enum CallStatus {
 }
 
 export default function CompanionComponent({
-  companionid,
   name,
   topic,
   subject,
@@ -94,7 +92,7 @@ export default function CompanionComponent({
     };
 
     try {
-      //@ts-expect-error
+      // @ts-expect-error vapi.start typing mismatch, but works at runtime
       await vapi.start(configureAssistant(voice, style), assistantOverrides);
       setCallStatus(CallStatus.ACTIVE);
     } catch (err) {
