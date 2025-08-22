@@ -4,7 +4,7 @@ import Link from "next/link";
 type CompanionCardProps = {
   id: string;
   name: string;
-  title: string;
+  topic: string;
   subject: string;
   duration: number;
   color: string;
@@ -13,7 +13,7 @@ type CompanionCardProps = {
 export default function CompanionCard({
   id,
   name,
-  title,
+  topic,
   subject,
   duration,
   color,
@@ -32,7 +32,7 @@ export default function CompanionCard({
         </button>
       </div>
       <h2 className="text-2xl font-bold">{name}</h2>
-      <p className="text-sm">Topic:{title}</p>
+      <p className="text-sm">{topic}</p>
       <div className="flex items-center gap-2">
         <Image
           src="/icons/clock.svg"

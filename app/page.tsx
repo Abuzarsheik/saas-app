@@ -12,7 +12,7 @@ export default function Home() {
         <CompanionCard
           id="1"
           name="Neura the Brainy Explorer"
-          title="Neural Network of the Brain"
+          topic="Neural Network of the Brain"
           subject="Science"
           duration={45}
           color="#f22"
@@ -20,7 +20,7 @@ export default function Home() {
         <CompanionCard
           id="2"
           name="Countsy the Number Wizard"
-          title="Derivatives & Integrals"
+          topic="Derivatives & Integrals"
           subject="Maths"
           duration={30}
           color="#f09"
@@ -36,7 +36,7 @@ export default function Home() {
       </section>
       <section className="home-section">
         <CompanionList
-        title="Recent Sessions"
+          title="Recent Sessions"
           companions={recentSessions}
           className="w-2/3 max-lg:w-full"
         />
